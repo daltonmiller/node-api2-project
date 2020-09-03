@@ -3,10 +3,10 @@ const welcomeRouter = require("./welcome-router")
 const postRouter = require("./PC-router")
 
 const server = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 server.use(express.json());
-server.use(welcomeRouter)
+server.use(welcomeRouter);
 server.use(postRouter)
 
 server.get("/", (req, res) => {

@@ -3,7 +3,8 @@ const router = express.Router()
 
 router.get("/", (req, res) => {
     res.json({
-        message: "welcom to our api"
+        message: `welcome ${process.env.COHORT}`,
+        fact: process.env.FUN_FACT || "i have no fun facts"
     })
 })
 
